@@ -1,4 +1,7 @@
-# Super Trunfo
+# Super Trunfo<br>
+LINK DA WIKI DE PENSAMENTOS SOBRE O PROJETO <a href="https://github.com/smolareck/superTrunfo/wiki/pensamentos">AQUI</a>
+<br>
+<br>
 Requisitos do projeto super trunfo <br>
 - O programa suportará somente o modo de jogo humano versus computador;
 - O humano poderá escolher jogar com 10, 20 ou 32 (tradicional) cartas;
