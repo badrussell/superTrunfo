@@ -1,0 +1,15 @@
+/**
+ * Mensagem inicial de saudação para o jogador. 
+ *
+ * Apenas printa a mensagem de saudação para o jogador, antes de apresentar o menu. 
+ **/
+public class Saudacao{
+  public static void printaSaudacao(){
+    
+    System.out.println("******Bem-vindo ao game Super Trunfo (Dragon Ball)******");
+    System.out.println();
+    System.out.println("Este game foi desenvolvido por \n\n => Vítor Soares Vian <https://github.com/vitorvsv> \n => Carlos Eduardo da Silva Smolareck <https://github.com/smolareck>");
+    System.out.println();
+    
+  }
+}

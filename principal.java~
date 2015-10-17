@@ -1,0 +1,32 @@
+/**
+ * *********************************************************
+ *  Super Trunfo By                                        *
+ *  ---> Vítor Soares Vian <vitorvsv> <---                 * 
+ *  ---> Carlos Eduardo da Silva Smolareck <smolareck> <---*
+ * *********************************************************
+ * 
+ * Criado em: 16/10/2015
+ * Descrição breve: Classe principal do jogo
+ * 
+ * 
+ * 
+ **/
+
+import *;
+
+public class principal{
+  public static void main(String SuperTrunfo[]){
+    
+    int opcao;
+    
+    
+    
+    do{
+      System.out.println("Selecione uma opção: ");
+      System.out.println(" 1 - Iniciar o game \n 2 - Instruções \n 3 - Sobre");
+      opcao = Entrada.leiaInt();
+    }while(opcao > 3 || opcao < 1);
+    
+    
+  }
+}
