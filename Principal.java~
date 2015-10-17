@@ -1,4 +1,5 @@
 /**
+ * 
  * *********************************************************
  *  Super Trunfo By                                        *
  *  ---> Vítor Soares Vian <vitorvsv> <---                 * 
@@ -9,7 +10,6 @@
  * Descrição breve: Classe principal do jogo
  * 
  * 
- * 
  **/
 public class Principal{
   public static void main(String SuperTrunfo[]){
@@ -17,25 +17,32 @@ public class Principal{
     //Declaração das variáveis
     int opcao;
     
+    //Printa a mensagem de saudação
     Saudacao.printaSaudacao();
     
+    //Menu com as opções do jogo
+    //validação para que seja apenas valores válidos (ou seja presentes no menu)
     do{
       System.out.println("Selecione uma opção: ");
-      System.out.println(" 1 - Iniciar o game \n 2 - Instruções \n 3 - Sobre");
+      System.out.println(" 1 - Iniciar o game \n 2 - Instruções \n 3 - Sobre \n 4 - Sair");
       opcao = Entrada.leiaInt();
-    }while(opcao > 3 || opcao < 1);
+    }while(opcao > 4 || opcao < 1);
     
+    //Seleciona a ação segundo a opção escolhida pelo usuário
+    //Printa a mensagem de sobre
     if (opcao == 3) {
-      System.out.println("CRIAR SOBRE");
+     Sobre.printaSobre();
     }else{
+      //Printa as instruções do jogo
       if (opcao == 2) {
-        
+        Instrucao.printaInstrucoes();
+      //Inicia o game  
+      }else if(opcao == 4){
+        Sair.printaSair();
       }else{
         System.out.println("INICIAR GAME");
-      
       }
     }
-    
     
   }
 }

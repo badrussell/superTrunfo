@@ -18,7 +18,7 @@ public class Principal{
     int opcao;
     
     //Printa a mensagem de saudação
-    Saudacao.printaSaudacao();
+    Mensagem.printaSaudacao();
     
     //Menu com as opções do jogo
     //validação para que seja apenas valores válidos (ou seja presentes no menu)
@@ -31,14 +31,14 @@ public class Principal{
     //Seleciona a ação segundo a opção escolhida pelo usuário
     //Printa a mensagem de sobre
     if (opcao == 3) {
-     Sobre.printaSobre();
+     Mensagem.printaSobre();
     }else{
       //Printa as instruções do jogo
       if (opcao == 2) {
-        Instrucao.printaInstrucoes();
+        Mensagem.printaInstrucoes();
       //Inicia o game  
       }else if(opcao == 4){
-        Sair.printaSair();
+        Mensagem.printaSair();
       }else{
         System.out.println("INICIAR GAME");
       }

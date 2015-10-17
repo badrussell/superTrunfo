@@ -1,9 +1,9 @@
 /**
- * Mensagem sobre do game. 
+ * Classe de Mensagem
  *
- * Apenas printa a mensagem de sobre para o jogador. 
+ * Aqui ficam contidas todas os print's do game. 
  **/
-public class Sobre{
+public class Mensagem{
   public static void printaSobre(){
     
     System.out.println("Game Super Trunfo Dragon Ball");
