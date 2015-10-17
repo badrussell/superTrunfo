@@ -1,0 +1,13 @@
+/**
+ * Classe Cartas
+ *
+ * Classe de controle das cartas do game
+ *
+ **/
+public class Carta{
+  //Sorteia a carta pela qual os jogador irão jogar
+  public static int sorteiaCarta(int qntdCartas){
+    return (int) ((Math.random() * qntdCartas) + 1) ;
+  }
+  
+}

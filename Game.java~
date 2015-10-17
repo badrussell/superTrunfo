@@ -1,0 +1,25 @@
+/**
+ * Classe Game
+ *
+ * Classe de controle do game ela chama e controla as classes que executam o game.
+ * Esta classe controla as demais.
+ *
+ **/
+public class Game{
+  public static void iniciar(int qntdCartas){
+    
+    int cartasPorJogador = qntdCartas / 2;
+    
+    int[] cartasJogador = new int[cartasPorJogador];
+    
+    for (int i = 0; i < cartasPorJogador; i++) {
+      cartasJogador[i] = Game.sorteiaCarta(qntdCartas);
+    }
+    
+  }
+  
+  public static int sorteiaCarta(int qntdCartas){
+    return ((Math.random() * qntdCartas) + 1) ;
+  }
+  
+}
