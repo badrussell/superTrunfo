@@ -9,22 +9,23 @@ public class Carta{
   //variáveis da classe
   static int qntdCartas = 0;
   
+  //Seta para a propriedade a quantidade de cartas que o jogador escolheu
   public static void setQuantidadeDeCartas(int qntdCartas){
     Carta.qntdCartas = qntdCartas;
   }
   
-  
-  public static int[] getCartasJogador(){
+  //Retorna as cartas do jogador
+  public static int[] getCartas(){
     
     int cartasPorJogador = Carta.qntdCartas / 2;
     
-    int[] cartasJogador = new int[cartasPorJogador];
+    int[] cartas = new int[cartasPorJogador];
     
-    for (int i = 0; i < cartasPorJogador; i++) {
-      cartasJogador[i] = Carta.sorteiaCarta();
+    for (int i = 0; i < cartas.length; i++) {
+      cartas[i] = Carta.sorteiaCarta();
     }
     
-    return cartasJogador;
+    return cartas;
   }
 
   //Sorteia a carta pela qual os jogador irão jogar

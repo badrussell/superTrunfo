@@ -6,20 +6,17 @@
  *
  **/
 public class Game{
+  
   public static void iniciar(int qntdCartas){
     
-    int cartasPorJogador = qntdCartas / 2;
+    Carta.setQuantidadeDeCartas(qntdCartas);
     
-    int[] cartasJogador = new int[cartasPorJogador];
+    int cartas[] = Carta.getCartas();
     
-    for (int i = 0; i < cartasPorJogador; i++) {
-      cartasJogador[i] = Game.sorteiaCarta(qntdCartas);
+    for (int i = 0; i < cartas.length; i++) {
+      System.out.println(cartas[i]);
     }
     
-  }
-  
-  public static int sorteiaCarta(int qntdCartas){
-    return ((Math.random() * qntdCartas) + 1) ;
   }
   
 }
