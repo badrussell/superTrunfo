@@ -189,8 +189,3 @@ Soco=652
 Chute=235
 Poder=487	
 Defesa=253
-
-
-
-
-
