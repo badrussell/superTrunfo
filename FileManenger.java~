@@ -3,8 +3,37 @@ import javax.swing.*;
 import java.io.*;
 import java.util.regex.*;
 
-public class retornoLeitura{
+public class FileManenger{
+  
+  public String fileName = "cartas.txt";
+  
   public static void main(String SuperTrunfo[]){
+    
+    readFile();
+    
+  }
+  
+  public static void readFile(){
+    
+    try {
+      FileReader arq = new FileReader(this.fileName);
+      BufferedReader lerArq = new BufferedReader(arq);
+      String linha = lerArq.readLine(); // lê a primeira linha
+      // a variável "linha" recebe o valor "null" quando o processo  de repetição atingir o final do arquivo texto 
+      while (linha != null) { 
+        System.out.println(linha);
+        linha = lerArq.readLine(); // lê da segunda até a última linha
+      }
+      
+      arq.close(); 
+    } catch (IOException e) {
+      System.err.printf("Erro na abertura do arquivo: %s.\n", e.getMessage()); 
+    } 
+    
+  }
+  
+  
+  public static void uasdhiasdh(String SuperTrunfo[]){
     
     int procura = 0;
     boolean entrou = false;
@@ -17,7 +46,7 @@ public class retornoLeitura{
       FileReader arq = new FileReader("cartas.txt");
       BufferedReader lerArq = new BufferedReader(arq);
       String linha = lerArq.readLine(); // lê a primeira linha
-      // a variável "linha" recebe o valor "null" quando o processo  de repetição atingir o final do arquivo texto 
+      
       while (linha != null) { 
         
         if(linha.toLowerCase().contains(".".toLowerCase())){
@@ -35,13 +64,12 @@ public class retornoLeitura{
           System.out.println(linha);
         }
         
-        linha = lerArq.readLine(); // lê da segunda até a última linha
+        linha = lerArq.readLine(); 
       }
       
       arq.close(); 
     } catch (IOException e) {
       System.err.printf("Erro na abertura do arquivo: %s.\n", e.getMessage()); 
     } 
-    System.out.println(); 
   }
 }
