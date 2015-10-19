@@ -3,31 +3,44 @@ import javax.swing.*;
 import java.io.*;
 import java.util.regex.*;
 
-public class retornoLeitura{
+public class RetornoLeitura{
   public static void main(String SuperTrunfo[]){
+    
+    int procura = 0;
+    boolean entrou = false;
+    
+    do{
+      procura = Entrada.leiaInt("Digite o código da carta: ");
+    }while(procura < 0 || procura > 32);
     
     try {
       FileReader arq = new FileReader("cartas.txt");
       BufferedReader lerArq = new BufferedReader(arq);
       String linha = lerArq.readLine(); // lê a primeira linha
-      // a variável "linha" recebe o valor "null" quando o processo  de repetição atingir o final do arquivo texto 
+    
       while (linha != null) { 
         
-       
-        /*
-        if(linha.split("=")[0] != null){
-          // String columnArray[] = linha.split(Pattern.quote("."));
-          String columnArray[] = linha.split(".");
-          System.out.println(columnArray[0]);
-        }*/
+        if(linha.toLowerCase().contains(".".toLowerCase())){
+          String columnArray[] = linha.split(Pattern.quote("."));
+          if(procura == Integer.parseInt(columnArray[0])){
+            entrou = true;
+          }
+        }
         
-        linha = lerArq.readLine(); // lê da segunda até a última linha
+        if(linha.equals("*")){
+          entrou = false;
+        }
+        
+        if(entrou){
+          System.out.println(linha);
+        }
+        
+        linha = lerArq.readLine(); 
       }
       
       arq.close(); 
     } catch (IOException e) {
       System.err.printf("Erro na abertura do arquivo: %s.\n", e.getMessage()); 
     } 
-    System.out.println(); 
   }
 }
