@@ -44,6 +44,7 @@ public class retornoLeitura{
         }
         
         linha = lerArq.readLine();
+        
       }
       
       arq.close(); 

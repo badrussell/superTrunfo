@@ -8,8 +8,9 @@
 public class Game{
   
   //Variáveis da classe
-  static int[] cartasJogador;
-  static int[] cartasComputador;
+  static int[] qntdCartasJogador;
+  static int[] qntdCartasComputador;
+  
   
   //Inicia o jogo setando as cartas para os jogadores.
   //As cartas são referenciadas pelo id cadastrado no arquivo.
@@ -18,15 +19,24 @@ public class Game{
     //Seta com quantas cartas o jogador escolheu jogar
     Carta.setQuantidadeDeCartas(qntdCartas);
     
-    //Pegas as cartas do jogador e do computador
-    Game.cartasJogador    = Carta.getCartas();
-    Game.cartasComputador = Carta.getCartas();
+    //Pegas as cartas (ids) do jogador e do computador
+    Game.qntdCartasJogador    = Carta.getCartas();
+    Game.qntdCartasComputador = Carta.getCartas();
     
-    for (int i = 0; i < Game.cartasJogador.length; i++) {
-      System.out.println(Game.cartasJogador[i]);
+      //Vetores com as cartas dos jogadores
+      String[] cartasJogador = new String[qntdCartas/2];
+      String[] cartasComputador = new String[qntdCartas/2];
+    
+    //Preenchendo os vetores cartas com as cartas selecionadas do random
+    for (int i = 0; i < Game.qntdCartasJogador.length; i++) {
+      cartasJogador[i]    = retornoLeitura.retornaCarta(qntdCartasJogador[i]);
+      cartasComputador[i] = retornoLeitura.retornaCarta(qntdCartasComputador[i]);
     }
     
-    //System.out.println(retornoLeitura.retornaCarta(1));
+    
+    for (int i = 0; i < cartasJogador.length; i++) {
+      System.out.println(cartasJogador[i]);
+    }
     
     
   }
