@@ -45,9 +45,14 @@ public class Principal{
         System.out.println("INICIANDO GAME... Carregando Configurações...");
         Thread.sleep(3000);
         
+        
         do {
           qntdCartas = Entrada.leiaInt("Informe a quantidade de cartas que deseja jogar (10,20,32): ");
         }while(qntdCartas != 10 && qntdCartas != 20 && qntdCartas != 32);
+        
+        
+        //Inicia o game
+        Game.iniciar(qntdCartas);
         
       }
     }
