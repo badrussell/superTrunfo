@@ -42,6 +42,7 @@ public class Principal{
         Mensagem.printaSair();
       //Inicia o game
       }else{
+        
         System.out.println("INICIANDO GAME... Carregando Configurações...");
         Thread.sleep(3000);
         
@@ -58,3 +59,4 @@ public class Principal{
     }
   }
 }
+  

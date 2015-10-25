@@ -27,15 +27,15 @@ public class Game{
       String[] cartasJogador = new String[qntdCartas/2];
       String[] cartasComputador = new String[qntdCartas/2];
     
+      
     //Preenchendo os vetores cartas com as cartas selecionadas do random
+      //Após preencher zera a variável 
     for (int i = 0; i < Game.qntdCartasJogador.length; i++) {
-      cartasJogador[i]    = retornoLeitura.retornaCarta(qntdCartasJogador[i]);
-      cartasComputador[i] = retornoLeitura.retornaCarta(qntdCartasComputador[i]);
-    }
-    
-    
-    for (int i = 0; i < cartasJogador.length; i++) {
-      System.out.println(cartasJogador[i]);
+      cartasJogador[i]     = retornoLeitura.retornaCarta(qntdCartasJogador[i]);
+      retornoLeitura.carta = "";
+      
+      cartasComputador[i]  = retornoLeitura.retornaCarta(qntdCartasComputador[i]);
+      retornoLeitura.carta = "";
     }
     
     

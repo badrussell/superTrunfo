@@ -19,17 +19,18 @@ public class retornoLeitura{
     
     int procura = codCarta;
     boolean entrou = false;
-    
+   
     try {
       FileReader arq = new FileReader("cartas.txt");
       BufferedReader lerArq = new BufferedReader(arq);
       String linha = lerArq.readLine(); // le a primeira linha
-    
+      
       while (linha != null) { 
         
         if(linha.toLowerCase().contains(".".toLowerCase())){
           String columnArray[] = linha.split(Pattern.quote("."));
           if(procura == Integer.parseInt(columnArray[0])){
+            
             entrou = true;
           }
         }
@@ -53,7 +54,10 @@ public class retornoLeitura{
       System.err.printf("Erro na abertura do arquivo: %s.\n", e.getMessage()); 
     } 
     
+  
     return retornoLeitura.carta;
+    
   }
   
+   
 }

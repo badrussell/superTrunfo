@@ -3,20 +3,27 @@ import javax.swing.*;
 import java.io.*;
 import java.util.regex.*;
 
-public class RetornoLeitura{
-  public static void main(String SuperTrunfo[]){
+/**
+ * Retorna a carta especificada (pelo id) 
+ **/
+public class retornoLeitura{
+  
+  static String carta = "";
+  
+  public static String retornaCarta(int codCarta){
     
-    int procura = 0;
+    //ValidaÃ§Ã£o para que o codigo da carta esteja no intervalo vÃ¡lido
+    if (codCarta < 0 || codCarta > 32) {
+      return "false";
+    }
+    
+    int procura = codCarta;
     boolean entrou = false;
-    
-    do{
-      procura = Entrada.leiaInt("Digite o código da carta: ");
-    }while(procura < 0 || procura > 32);
     
     try {
       FileReader arq = new FileReader("cartas.txt");
       BufferedReader lerArq = new BufferedReader(arq);
-      String linha = lerArq.readLine(); // lê a primeira linha
+      String linha = lerArq.readLine(); // le a primeira linha
     
       while (linha != null) { 
         
@@ -32,15 +39,21 @@ public class RetornoLeitura{
         }
         
         if(entrou){
-          System.out.println(linha);
+          //Guarda na variavel global a cartar encontrada
+          retornoLeitura.carta += linha+"\n";
         }
         
-        linha = lerArq.readLine(); 
+        linha = lerArq.readLine();
+        
       }
       
       arq.close(); 
+      
     } catch (IOException e) {
       System.err.printf("Erro na abertura do arquivo: %s.\n", e.getMessage()); 
     } 
+    
+    return retornoLeitura.carta;
   }
+  
 }
