@@ -50,4 +50,14 @@ public class Mensagem{
     System.out.println("escreva o que quiser apenas padronize");
     
   }
+  
+  //Printa a mensagem para o usuário selecionar a caracteristica para comparar a carta
+  public static void printaSelecionaCaracteristica(){
+    System.out.println("Informe uma caracteristica para comparar");
+    System.out.println("1 - Soco");
+    System.out.println("2 - Chute");
+    System.out.println("3 - Poder");
+    System.out.println("4 - Defesa");
+  }
+  
 }

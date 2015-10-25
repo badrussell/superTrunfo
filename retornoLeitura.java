@@ -59,5 +59,9 @@ public class retornoLeitura{
     
   }
   
+  //Retorna o valor correspondete da caracteristica com base no id da carta e do id da linha
+  public static void retornaValorCaracteristica(){
+    
+  }
    
 }
