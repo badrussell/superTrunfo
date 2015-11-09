@@ -8,15 +8,15 @@ public class Leitura{
     try {
       FileReader arq = new FileReader("cartas.txt");
       BufferedReader lerArq = new BufferedReader(arq);
-      String linha = lerArq.readLine(); // lê a primeira linha
-      // a variável "linha" recebe o valor "null" quando o processo  de repetição atingir o final do arquivo texto 
+      String linha = lerArq.readLine(); // le a primeira linha
+      // a variavel "linha" recebe o valor "null" quando o processo  de repeticao atingir o final do arquivo texto 
       while (linha != null) { 
         if(linha.equals("*")){
           System.out.println("***********************************");
         }else{
           System.out.println(linha);
         }
-        linha = lerArq.readLine(); // lê da segunda até a última linha
+        linha = lerArq.readLine(); // le da segunda ate a ultima linha
       }
       
       arq.close(); 
