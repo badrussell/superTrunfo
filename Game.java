@@ -8,12 +8,14 @@
 public class Game{
   
   //Variáveis da classe
+  
+  //Vetor com os ids das cartas
   static int[] idsCartasJogador;
   static int[] idsCartasComputador;
   
   //Vetores cartas
-  static String[] cartasJogador;
-  static String[] cartasComputador;
+  static String[][] cartasJogador;
+  static String[][] cartasComputador;
   
   
   //Inicia o jogo setando as cartas para os jogadores.
@@ -28,22 +30,22 @@ public class Game{
     Game.idsCartasComputador = Carta.getCartasComputador();
     
     // Inicializando vetores que irão conter as cartas dos jogadores
-    Game.cartasJogador    = new String[qntdCartas/2];
-    Game.cartasComputador = new String[qntdCartas/2];
+    Game.cartasJogador    = new String[qntdCartas/2][5];
+    Game.cartasComputador = new String[qntdCartas/2][5];
     
       
-    //Preenchendo os vetores cartas com as cartas selecionadas do random
-      //Após preencher zera a variável 
+    //Preenchendo os vetores cartas com do Jogador
     for (int i = 0; i < Game.idsCartasJogador.length; i++) {
-      
       //Vetor com as cartas do Jogador
-      cartasJogador[i]     = retornoLeitura.retornaCarta(idsCartasJogador[i]);
-      retornoLeitura.carta = "";
-      
-      //Vetor com as cartas do Computador
-      cartasComputador[i]  = retornoLeitura.retornaCarta(idsCartasComputador[i]);
-      retornoLeitura.carta = "";
+      Game.cartasJogador[i]     = Leitura.getCartaById(idsCartasJogador[i]);
     }
+    
+    //Preenchendo os vetores cartas do Computador
+    for (int i = 0; i < Game.idsCartasComputador.length; i++) {
+      //Vetor com as cartas do Computador
+      Game.cartasComputador[i]  = Leitura.getCartaById(idsCartasComputador[i]);
+    }
+    
     
     for (int i = 0; i < cartasJogador.length; i++) {
       System.out.println("Esta é sua carta \n");
