@@ -8,8 +8,8 @@
 public class Game{
   
   //Variáveis da classe
-  static int[] qntdCartasJogador;
-  static int[] qntdCartasComputador;
+  static int[] idsCartasJogador;
+  static int[] idsCartasComputador;
   
   //Vetores cartas
   static String[] cartasJogador;
@@ -24,24 +24,24 @@ public class Game{
     Carta.setQuantidadeDeCartas(qntdCartas);
     
     //Pegas as cartas (ids) do jogador e do computador
-    Game.qntdCartasJogador    = Carta.getCartas();
-    Game.qntdCartasComputador = Carta.getCartas();
+    Game.idsCartasJogador    = Carta.getCartasJogador();
+    Game.idsCartasComputador = Carta.getCartasComputador();
     
-      //Vetores com as cartas dos jogadores
-      Game.cartasJogador    = new String[qntdCartas/2];
-      Game.cartasComputador = new String[qntdCartas/2];
+    // Inicializando vetores que irão conter as cartas dos jogadores
+    Game.cartasJogador    = new String[qntdCartas/2];
+    Game.cartasComputador = new String[qntdCartas/2];
     
       
     //Preenchendo os vetores cartas com as cartas selecionadas do random
       //Após preencher zera a variável 
-    for (int i = 0; i < Game.qntdCartasJogador.length; i++) {
+    for (int i = 0; i < Game.idsCartasJogador.length; i++) {
       
       //Vetor com as cartas do Jogador
-      cartasJogador[i]     = retornoLeitura.retornaCarta(qntdCartasJogador[i]);
+      cartasJogador[i]     = retornoLeitura.retornaCarta(idsCartasJogador[i]);
       retornoLeitura.carta = "";
       
       //Vetor com as cartas do Computador
-      cartasComputador[i]  = retornoLeitura.retornaCarta(qntdCartasComputador[i]);
+      cartasComputador[i]  = retornoLeitura.retornaCarta(idsCartasComputador[i]);
       retornoLeitura.carta = "";
     }
     
@@ -73,7 +73,7 @@ public class Game{
   
   //Compara a caracteristica que o usuário selecionou
   public static void comparaCaracteristica(int caractaristicaInt, int cartaId){
-    int valorCaracteristicaUsuario = retornoLeitura.retornaValorCaracteristica(caractaristicaInt,cartaId);
+    //int valorCaracteristicaUsuario = retornoLeitura.retornaValorCaracteristica(caractaristicaInt,cartaId);
   
   }
   

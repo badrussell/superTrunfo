@@ -30,7 +30,7 @@ public class Carta{
 
   //Sorteia a carta pela qual os jogador irão jogar
   public static int sorteiaCarta(){
-    return (int) ((Math.random() * Carta.qntdCartas) + 1) ;
+    return (int) ((Math.random() * 32) + 1) ;
   }
   
 }

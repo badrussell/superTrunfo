@@ -56,15 +56,42 @@ public class Game{
         caractaristicaInt = Entrada.leiaInt();
       }while(caractaristicaInt <= 0 && caractaristicaInt > 4);
       
-      Game.selecionaCaracteristica(caractaristicaInt);
+      Game.selecionaCaracteristica(caractaristicaInt,i);
       
     }
     
   }
   
-  public static void selecionaCaracteristica(int caractaristicaInt){
+  //Função que trabalha com a caracteristica que o usuário selecionou
+  public static void selecionaCaracteristica(int caractaristicaInt,int cartaId){
+    
+    System.out.println("Você escolheu comparar a caracteristica "+retornaCaracteristicaSelecionada(caractaristicaInt));
+    
+    Game.comparaCaracteristica(caractaristicaInt,cartaId);
+    
+  }
+  
+  //Compara a caracteristica que o usuário selecionou
+  public static void comparaCaracteristica(int caractaristicaInt, int cartaId){
+    int valorCaracteristicaUsuario = retornoLeitura.retornaValorCaracteristica(caractaristicaInt,cartaId);
   
   }
+  
+  //Retorna a caracteristica que o usuário escolheu comparar
+  public static String retornaCaracteristicaSelecionada(int caractaristicaInt){
+    if (caractaristicaInt == 1) {
+      return "Soco";
+    }else{
+      if (caractaristicaInt == 2) {
+        return "Chute";
+      }else if(caractaristicaInt == 3){
+        return "Poder";
+      }else{
+        return "Defesa";
+      }
+    }
+  }
+  
   
   
 }

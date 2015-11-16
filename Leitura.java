@@ -1,14 +1,16 @@
-import java.util.*; 
-import javax.swing.*;
-import java.io.*;
-
+/*
+ * Class Leitura 
+ * 
+ * Classe de manutenção do vetor de cartas
+ * 
+ */
 public class Leitura{
   
   static  String[][] cartasDeRetorno = new String[5][32];
   
   public static void setCartas(){
   
-    String[][] cartas = new String[5][32];
+    String[][] cartas = new String[32][5];
     
     //Preenchendo a matriz cartas
     //Primeira Coluna
@@ -248,8 +250,33 @@ public class Leitura{
    
   }
   
+  //Retorna as cartas
   public static String[][] getCartas(){
     return Leitura.cartasDeRetorno;
   } 
+
+  public static String[][] getCartaById(int cartaId){
+    
+    //Matriz que ira conter a carta a ser retornada
+    String[][] cartaUnica = new String[1][5];
+    
+    //Inicializa as cartas
+    Leitura.setCartas();
+    
+    //Matriz contendo todas as cartas
+    String[][] todasCartas = Leitura.getCartas();
+    
+    //Procura a carta na matriz pelo valor passado em parâmetro
+    for (int l = 0; l < todasCartas.length; l++) {
+      for (int c = 0; c < todasCartas[0].length; c++) {
+        if (l == cartaId) {
+          cartaUnica[l][c] = todasCartas[l][c];
+        }
+      }
+    }
+    
+    return cartaUnica;
+  }
   
 }
+
