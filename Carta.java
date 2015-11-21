@@ -6,7 +6,11 @@
  **/
 public class Carta{
   
+<<<<<<< HEAD
   //variÃ¡veis da classe
+=======
+  //variáveis da classe
+>>>>>>> e8671a74c32abdd53198f5075bb90f8391927f0d
   static int qntdCartas = 0;
   static int[] cartasComputador;
   static int[] cartasJogador;
@@ -16,17 +20,28 @@ public class Carta{
     Carta.qntdCartas = qntdCartas;
     
     //Seta o tamanho dos vetores (inicializa os vetores)
+<<<<<<< HEAD
     Carta.cartasComputador = new int[ qntdCartas / 2];
     Carta.cartasJogador    = new int[ qntdCartas / 2];
     
     //ApÃ³s chamar este metodo jÃ¡ chama este outro que seta as cartas
+=======
+    Carta.cartasComputador = new int[ qntdCartas ];
+    Carta.cartasJogador    = new int[ qntdCartas ];
+    
+    //Após chamar este metodo já chama este outro que seta as cartas
+>>>>>>> e8671a74c32abdd53198f5075bb90f8391927f0d
     Carta.setCartas();
   }
   
   //Seta as cartas dos jogadores (computador e jogador)
   public static void setCartas(){
     
+<<<<<<< HEAD
     //Inicializa a variÃ¡vel
+=======
+    //Inicializa a variável
+>>>>>>> e8671a74c32abdd53198f5075bb90f8391927f0d
     int cartaSorteada = 0;
     
     //Preenche o vetor com as cartas do computador
@@ -39,7 +54,11 @@ public class Carta{
           Carta.cartasComputador[i] = cartaSorteada;
     }
      
+<<<<<<< HEAD
     //Zerando a variÃ¡vel
+=======
+    //Zerando a variável
+>>>>>>> e8671a74c32abdd53198f5075bb90f8391927f0d
     cartaSorteada = 0;
     
     //Preenche o vetor com as cartas do Jogador
@@ -47,7 +66,11 @@ public class Carta{
       //Enquanto a carta existe em alguns dos vetores sorteie uma nova carta
       do {
         cartaSorteada = Carta.sorteiaCarta();
+<<<<<<< HEAD
       }while(Carta.existeCartaNoVetor(cartaSorteada,Carta.cartasComputador) && Carta.existeCartaNoVetor(cartaSorteada,Carta.cartasJogador));
+=======
+      }while(Carta.existeCartaNoVetor(cartaSorteada,Carta.cartasComputador) || Carta.existeCartaNoVetor(cartaSorteada,Carta.cartasJogador));
+>>>>>>> e8671a74c32abdd53198f5075bb90f8391927f0d
       
       Carta.cartasJogador[i] = cartaSorteada;
       
@@ -57,7 +80,11 @@ public class Carta{
   //Testa se a carta exise no vetor
   // int carta   -> Id da carta sorteada
   // int[] vetor -> Vetor a ser analisado
+<<<<<<< HEAD
   //Retorna true se a carta existe no vetor e false caso nÃ£o exista
+=======
+  //Retorna true se a carta existe no vetor e false caso não exista
+>>>>>>> e8671a74c32abdd53198f5075bb90f8391927f0d
   public static boolean existeCartaNoVetor(int carta, int[] vetor){
     //Variavel de controle de teste
     boolean existe = false;
@@ -85,7 +112,11 @@ public class Carta{
     return Carta.cartasJogador;
   }
 
+<<<<<<< HEAD
   //Sorteia a carta pela qual os jogador irÃ£o jogar
+=======
+  //Sorteia a carta pela qual os jogador irão jogar
+>>>>>>> e8671a74c32abdd53198f5075bb90f8391927f0d
   public static int sorteiaCarta(){
     return (int) ((Math.random() * 32) + 1) ;
   }

@@ -22,7 +22,11 @@ public class Principal{
     Mensagem.printaSaudacao();
     
     //Menu com as opções do jogo
+<<<<<<< HEAD
     //validação para que seja apenas valores válidos (ou seja presentes no menu)
+=======
+    //Validação para que seja apenas valores válidos (ou seja presentes no menu)
+>>>>>>> e8671a74c32abdd53198f5075bb90f8391927f0d
     do{
       System.out.println("Selecione uma opção: ");
       System.out.println(" 1 - Iniciar o game \n 2 - Instruções \n 3 - Sobre \n 4 - Sair");
@@ -46,7 +50,10 @@ public class Principal{
         System.out.println("INICIANDO GAME... Carregando Configurações...");
         Thread.sleep(3000);
         
+<<<<<<< HEAD
         
+=======
+>>>>>>> e8671a74c32abdd53198f5075bb90f8391927f0d
         do {
           qntdCartas = Entrada.leiaInt("Informe a quantidade de cartas que deseja jogar (10,20,32): ");
         }while(qntdCartas != 10 && qntdCartas != 20 && qntdCartas != 32);

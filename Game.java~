@@ -7,12 +7,17 @@
  **/
 public class Game{
   
+<<<<<<< HEAD
   //VariÃ¡veis da classe
+=======
+  //Variáveis da classe
+>>>>>>> e8671a74c32abdd53198f5075bb90f8391927f0d
   
   //Vetor com os ids das cartas
   static int[] idsCartasJogador;
   static int[] idsCartasComputador;
   
+<<<<<<< HEAD
   //Vetores cartas
   static String[][] cartasJogador;
   static String[][] cartasComputador;
@@ -20,6 +25,10 @@ public class Game{
   
   //Inicia o jogo setando as cartas para os jogadores.
   //As cartas sÃ£o referenciadas pelo id cadastrado no arquivo.
+=======
+  //Inicia o jogo setando as cartas para os jogadores.
+  //As cartas são referenciadas pelo id cadastrado no arquivo.
+>>>>>>> e8671a74c32abdd53198f5075bb90f8391927f0d
   public static void iniciar(int qntdCartas){
     
     //Seta com quantas cartas o jogador escolheu jogar
@@ -29,6 +38,7 @@ public class Game{
     Game.idsCartasJogador    = Carta.getCartasJogador();
     Game.idsCartasComputador = Carta.getCartasComputador();
     
+<<<<<<< HEAD
     // Inicializando vetores que irÃ£o conter as cartas dos jogadores
     Game.cartasJogador    = new String[qntdCartas/2][5];
     Game.cartasComputador = new String[qntdCartas/2][5];
@@ -80,6 +90,63 @@ public class Game{
   }
   
   //Retorna a caracteristica que o usuÃ¡rio escolheu comparar
+=======
+    int rodadas = 0;
+    
+    char vencedor = 'X';
+    
+    while(idsCartasJogador.length != 0 || idsCartasComputador.length != 0){
+      
+      Game.getCartaEscolhida();        
+        
+    }
+    
+    
+  }
+  
+  public static int getCartaEscolhida(){
+    
+    System.out.println("Esta é sua carta \n");
+    System.out.println(Leitura.getCartaByString(idsCartasJogador[0]));
+    
+    //Zera a variavel de caracteristicas
+    int caractaristicaInt = 0;
+    
+    //Recebe o id da caracteristica a ser comparada
+    do{
+      Mensagem.printaSelecionaCaracteristica();
+      caractaristicaInt = Entrada.leiaInt();
+    }while(caractaristicaInt <= 0 && caractaristicaInt > 4);
+    
+    Game.selecionaCaracteristica(caractaristicaInt,0);
+    
+    System.out.println(Game.retornaCaracteristicaSelecionada(caractaristicaInt));
+    return 1;
+    
+  }
+  
+  //Função que trabalha com a caracteristica que o usuário selecionou
+  public static void selecionaCaracteristica(int caractaristicaInt,int cartaId){
+    
+    System.out.println("Você escolheu comparar a caracteristica "+Game.retornaCaracteristicaSelecionada(caractaristicaInt));
+    
+  }
+  
+  //Compara a caracteristica que o usuário selecionou
+  public static void comparaCaracteristica(int caractaristicaInt, int cartaId){
+    int valorCaracteristicaUsuario = Integer.parseInt(retornoLeitura.retornaValorCaracteristica(caractaristicaInt,cartaId));
+    
+    
+    
+  }
+  
+  
+  public static int retornaCaracteristicaDoComputador(){
+    return 2;
+  }
+  
+  //Retorna a caracteristica que o usuário escolheu comparar
+>>>>>>> e8671a74c32abdd53198f5075bb90f8391927f0d
   public static String retornaCaracteristicaSelecionada(int caractaristicaInt){
     if (caractaristicaInt == 1) {
       return "Soco";
