@@ -5,29 +5,29 @@
  **/
 public class Mensagem{
   
-  //Printa as instruções do game.
+  //Printa as instrucoes do game.
   public static void printaInstrucoes(){ 
-    System.out.println("******Intruções******");
+    System.out.println("******Intruï¿½ï¿½es******");
     System.out.println();
-    System.out.println("1 - O jogo tem a finalidade de obter todas as cartas do adversário e para isso você deve escolher uma característica presente na cara para então comparar a com a mesma característica da carta do computador.");
-    System.out.println("2 - As características são: Soco, Chute, Poder e Defesa");
-    System.out.println("3 - Você pode selecionar a quantidade de cartas (10,20,32) sendo que você receberá metade das cartas enquanto o computador receberá a outra metade.");
-    System.out.println("4 - Na primeira rodada o primeiro jogador é sorteado, apartir da primeira o ganhador da última partida inicia a rodada.");
-    System.out.println("5 - Caso os valores das características das cartas sejam iguais, ambos jogadores permanecem com as suas cartas.");
-    System.out.println("6 - O jogador que obter todas as cartas do adversário vence o jogo.");
+    System.out.println("1 - O jogo tem a finalidade de obter todas as cartas do adversï¿½rio e para isso vocï¿½ deve escolher uma caracterï¿½stica presente na cara para entï¿½o comparar a com a mesma caracterï¿½stica da carta do computador.");
+    System.out.println("2 - As caracterï¿½sticas sï¿½o: Soco, Chute, Poder e Defesa");
+    System.out.println("3 - Vocï¿½ pode selecionar a quantidade de cartas (10,20,32) sendo que vocï¿½ receberï¿½ metade das cartas enquanto o computador receberï¿½ a outra metade.");
+    System.out.println("4 - Na primeira rodada o primeiro jogador ï¿½ sorteado, apartir da primeira o ganhador da ï¿½ltima partida inicia a rodada.");
+    System.out.println("5 - Caso os valores das caracterï¿½sticas das cartas sejam iguais, ambos jogadores permanecem com as suas cartas.");
+    System.out.println("6 - O jogador que obter todas as cartas do adversï¿½rio vence o jogo.");
   }
   
-  //Printa a mensagem de sair para o usuário.
+  //Printa a mensagem de sair para o usuario.
   public static void printaSair(){  
-    System.out.println("Obrigado por jogar nosso game! Até a próxima...");
+    System.out.println("Obrigado por jogar nosso game! Atï¿½ a prï¿½xima...");
   }
   
-  //Printa a mensagem de saudação para o usuário
+  //Printa a mensagem de saudacao para o usuario
   public static void printaSaudacao(){
     
     System.out.println("******Bem-vindo ao game Super Trunfo (Dragon Ball)******");
     System.out.println();
-    System.out.println("Este game foi desenvolvido por \n\n => Vítor Soares Vian <https://github.com/vitorvsv> \n => Carlos Eduardo da Silva Smolareck <https://github.com/smolareck>");
+    System.out.println("Este game foi desenvolvido por \n\n => Vï¿½tor Soares Vian <https://github.com/vitorvsv> \n => Carlos Eduardo da Silva Smolareck <https://github.com/smolareck>");
     System.out.println();
     
   }
@@ -37,11 +37,11 @@ public class Mensagem{
     
     System.out.println("Game Super Trunfo Dragon Ball");
     System.out.println();
-    System.out.println("Este game tem fim avaliativo para a disciplina de Algoritmos e Programação de 2015B - Univates.");
+    System.out.println("Este game tem fim avaliativo para a disciplina de Algoritmos e Programacao de 2015B - Univates.");
     System.out.println();
     System.out.println("Game desenvolvidor por: ");
     System.out.println();
-    System.out.println("Vítor Soares Vian");
+    System.out.println("Vitor Soares Vian");
     System.out.println("Git Hub: https://github.com/vitorvsv");
     System.out.println("E-mail: vitorsoa@hotmail.com");
     System.out.println();
@@ -51,7 +51,7 @@ public class Mensagem{
     
   }
   
-  //Printa a mensagem para o usuário selecionar a caracteristica para comparar a carta
+  //Printa a mensagem para o usuario selecionar a caracteristica para comparar a carta
   public static void printaSelecionaCaracteristica(){
     System.out.println("Informe uma caracteristica para comparar");
     System.out.println("1 - Soco");

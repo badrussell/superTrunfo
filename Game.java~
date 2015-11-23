@@ -5,16 +5,18 @@
  * Esta classe controla as demais.
  *
  **/
+import java.util.Arrays;
+
 public class Game{
   
-  //Vari·veis da classe
+  //Variaveis da classe
   
   //Vetor com os ids das cartas
   static int[] idsCartasJogador;
   static int[] idsCartasComputador;
   
   //Inicia o jogo setando as cartas para os jogadores.
-  //As cartas s„o referenciadas pelo id cadastrado no arquivo.
+  //As cartas sao referenciadas pelo id cadastrado no arquivo.
   public static void iniciar(int qntdCartas){
     
     //Seta com quantas cartas o jogador escolheu jogar
@@ -24,23 +26,131 @@ public class Game{
     Game.idsCartasJogador    = Carta.getCartasJogador();
     Game.idsCartasComputador = Carta.getCartasComputador();
     
-    int rodadas = 0;
+    int rodadas = 1;
+ 
     
-    char vencedor = 'X';
-    
-    while(idsCartasJogador.length != 0 || idsCartasComputador.length != 0){
+    //while(rodadas != 0){
       
-      Game.getCartaEscolhida();        
-        
-    }
+      //Vari√°veis utilizadas para controlar se o jogo continua
+      int quantidadeJogador    = (Game.numeroValoresVetor(Game.idsCartasJogador));
+      int quantidadeComputador = (Game.numeroValoresVetor(Game.idsCartasComputador));
     
+      
+      int valorCartaJogador = 0;
+      int valorCartaComputador = 0;
+      
+      //Variavel com a informa√ß√£o de quem come√ßa o game
+      //String comeca = sorteiaQuemComeca();
+      String comeca = "c";
+      
+      //Validacao de quem comeca a partida
+      if (comeca == "j") {
+        
+        //Caso a quantidade de cartas do computador seja igual a zero ent√£o finaliza o jogo
+        if(quantidadeComputador > 0){
+          valorCartaComputador = Game.getCartaEscolhidaComputador();
+        }else{
+          rodadas = 0;
+        }
+        
+      }else{
+        
+        //Sorteia uma carta computador
+        int cartaComputador = sorteiaCartaParaJogar(idsCartasComputador);
+        
+        //Sorteia uma caracteristica para o Computador
+        int caracteristicaComputador = sorteiaCaracteristica();
+        
+        
+        //Caso a quantidade de cartas do jogador seja igual a zero ent√£o finaliza o jogo
+        if(quantidadeJogador > 0){
+          valorCartaJogador = Game.getCartaEscolhidaJogador(cartaComputador,caracteristicaComputador);
+        }else{
+          rodadas = 0;
+        }
+        
+      }      
+      
+      //retorna os valores atualizados (placar)
+      System.out.println("\n\n Placar \n");
+      System.out.println("VOC√ä => "+numeroValoresVetor(idsCartasJogador)
+                           +" || PC => "+numeroValoresVetor(idsCartasComputador));
+      
+     
+    //}
     
   }
   
-  public static int getCartaEscolhida(){
+  //Modela os vetores do vencedor e do perdedor da partida
+  public static void modelarVetor(int[] idsCartasGanhador,int[] idsCartasPerdedor, int carta){
     
-    System.out.println("Esta È sua carta \n");
-    System.out.println(Leitura.getCartaByString(idsCartasJogador[0]));
+    boolean ocorrencia = true;
+    //Coloca na primeira posi√ß√£o vazia do vetor a carta
+    for (int j = 0; j < idsCartasGanhador.length; j++) {
+      if (idsCartasGanhador[j] == 0) {
+        if (ocorrencia) {
+          idsCartasGanhador[j] = carta;
+          ocorrencia = false;
+        }
+      }
+    }
+    
+    //Retira a carta do vetor do perdedor
+    for (int i = 0; i < idsCartasPerdedor.length; i++) {
+      if (idsCartasPerdedor[i] == carta) {
+        idsCartasPerdedor[i] = 0;
+      }
+    }
+    
+  }
+  
+  //Controla o fluxo, nesse ponto do programa √© controlado a caracteristica que o usu√°rio
+  //deve comparar
+  public static int getCartaEscolhidaJogador(int cartaComputador, int caracteristicaComputador){
+    
+    //Sorteia e mostra a carta do jogador
+    System.out.println("Esta e sua carta \n");
+    int cartaSorteadaJogador = sorteiaCartaParaJogar(idsCartasJogador);
+    System.out.println(Leitura.getCartaByString(cartaSorteadaJogador));
+    
+    //Zera a variavel de caracteristicas
+    int caractaristicaJogador = 0;
+    
+    //Recebe o id da caracteristica a ser comparada
+    do{
+      Mensagem.printaSelecionaCaracteristica();
+      caractaristicaJogador = Entrada.leiaInt();
+    }while(caractaristicaJogador <= 0 && caractaristicaJogador > 4);
+    
+    //Cont√©m os valores das caracteristicas selecionadas
+    String valorCaracteristicaJogador   = Game.retornaCaracteristicaSelecionada(caractaristicaJogador,cartaSorteadaJogador); 
+    String valorCaracteristicaComputador = Game.retornaCaracteristicaSelecionada(caracteristicaComputador,cartaComputador); 
+    
+    System.out.println("\n\n Carta do Computador\n");
+    System.out.println(Leitura.getCartaByString(cartaComputador));
+    
+    //Computador venceu
+    if (Integer.parseInt(valorCaracteristicaJogador) < 
+        Integer.parseInt(valorCaracteristicaComputador)) {
+      modelarVetor(idsCartasComputador,idsCartasJogador,cartaSorteadaJogador);
+      
+      System.out.println("\n\nO Computador venceu essa rodada!\n\n");
+      
+    //Jogador venceu
+    }else{
+      modelarVetor(idsCartasJogador,idsCartasComputador,cartaComputador);
+      
+      System.out.println("\n\nVoc√™ venceu essa rodada!\n\n");
+    }
+    
+    
+    
+    return 0 ;
+  }
+  
+  public static int getCartaEscolhidaComputador(){
+    System.out.println("Esta e sua carta \n");
+    System.out.println(Leitura.getCartaByString(idsCartasComputador[0]));
     
     //Zera a variavel de caracteristicas
     int caractaristicaInt = 0;
@@ -48,51 +158,90 @@ public class Game{
     //Recebe o id da caracteristica a ser comparada
     do{
       Mensagem.printaSelecionaCaracteristica();
-      caractaristicaInt = Entrada.leiaInt();
+      caractaristicaInt = (int)(Math.random() * 5) + 1;
     }while(caractaristicaInt <= 0 && caractaristicaInt > 4);
     
     Game.selecionaCaracteristica(caractaristicaInt,0);
+   
     
-    System.out.println(Game.retornaCaracteristicaSelecionada(caractaristicaInt));
-    return 1;
+    System.out.println("Chegou aqui");
+    
+    //int valor = Integer.parseInt(Game.retornaCaracteristicaSelecionada(caractaristicaInt,idsCartasJogador[0]));
+    
+    
+    return 0 ;
+  
+  }
+  
+  public static int sorteiaCaracteristica() {
+    return (int) ((Math.random() * 4) + 1);
+  }
+  
+  
+  //Faz o sorteio da carta que vai ser jogada
+  public static int sorteiaCartaParaJogar(int[] vetor){
+  
+    boolean existe = false;
+    int cartaSorteada = 0;
+    
+    //Sorteia a carta enquanto ela n√£o existir no vetor passado por par√¢metro
+    do {
+       cartaSorteada = (int) ((Math.random() * 32) + 1);
+       
+       for (int i = 0; i < vetor.length; i++) {
+         if (vetor[i] == cartaSorteada) {
+           existe = true;
+         }
+       }
+    }while(existe == false);
+    
+    return cartaSorteada;
+  }
+  
+  //Metodo usado para sortear quem come√ßa o jogo
+  public static String sorteiaQuemComeca(){
+    int comeca = (int) (Math.random() * 10) + 1;
+    
+    if (comeca % 2 == 0) {
+      return "c";
+    }else{
+      return "j";
+    }
     
   }
   
-  //FunÁ„o que trabalha com a caracteristica que o usu·rio selecionou
+  //Funcao retorna quantidade de "casas" da matriz com valor
+  //Conta a quantidade de valores dentro do vetor passado por par√¢metro
+  public static int numeroValoresVetor(int[] numeroValoresVetor){
+    
+    int cont = 0;
+    
+    for(int i = 0; i < numeroValoresVetor.length; i++){
+      if(numeroValoresVetor[i] >= 1){
+        cont++;
+      }
+    }
+  
+    return cont;
+  }
+  
+  //Funcao que trabalha com a caracteristica que o usuario selecionou
   public static void selecionaCaracteristica(int caractaristicaInt,int cartaId){
     
-    System.out.println("VocÍ escolheu comparar a caracteristica "+Game.retornaCaracteristicaSelecionada(caractaristicaInt));
-    
+   
   }
   
-  //Compara a caracteristica que o usu·rio selecionou
+  //Compara a caracteristica que o usuÔøΩrio selecionou
   public static void comparaCaracteristica(int caractaristicaInt, int cartaId){
     int valorCaracteristicaUsuario = Integer.parseInt(retornoLeitura.retornaValorCaracteristica(caractaristicaInt,cartaId));
-    
-    
-    
   }
   
+  public static String retornaCaracteristicaSelecionada(int caractaristicaInt, int cartaId){
+    return retornoLeitura.retornaValorCaracteristica(caractaristicaInt,cartaId);
+  }
   
   public static int retornaCaracteristicaDoComputador(){
     return 2;
   }
-  
-  //Retorna a caracteristica que o usu·rio escolheu comparar
-  public static String retornaCaracteristicaSelecionada(int caractaristicaInt){
-    if (caractaristicaInt == 1) {
-      return "Soco";
-    }else{
-      if (caractaristicaInt == 2) {
-        return "Chute";
-      }else if(caractaristicaInt == 3){
-        return "Poder";
-      }else{
-        return "Defesa";
-      }
-    }
-  }
-  
-  
   
 }

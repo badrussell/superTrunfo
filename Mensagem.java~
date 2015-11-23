@@ -5,29 +5,29 @@
  **/
 public class Mensagem{
   
-  //Printa as instru√ß√µes do game.
+  //Printa as instruÁıes do game.
   public static void printaInstrucoes(){ 
-    System.out.println("******Intru√ß√µes******");
+    System.out.println("******IntruÁıes******");
     System.out.println();
-    System.out.println("1 - O jogo tem a finalidade de obter todas as cartas do advers√°rio e para isso voc√™ deve escolher uma caracter√≠stica presente na cara para ent√£o comparar a com a mesma caracter√≠stica da carta do computador.");
-    System.out.println("2 - As caracter√≠sticas s√£o: Soco, Chute, Poder e Defesa");
-    System.out.println("3 - Voc√™ pode selecionar a quantidade de cartas (10,20,32) sendo que voc√™ receber√° metade das cartas enquanto o computador receber√° a outra metade.");
-    System.out.println("4 - Na primeira rodada o primeiro jogador √© sorteado, apartir da primeira o ganhador da √∫ltima partida inicia a rodada.");
-    System.out.println("5 - Caso os valores das caracter√≠sticas das cartas sejam iguais, ambos jogadores permanecem com as suas cartas.");
-    System.out.println("6 - O jogador que obter todas as cartas do advers√°rio vence o jogo.");
+    System.out.println("1 - O jogo tem a finalidade de obter todas as cartas do advers·rio e para isso vocÍ deve escolher uma caracterÌstica presente na cara para ent„o comparar a com a mesma caracterÌstica da carta do computador.");
+    System.out.println("2 - As caracterÌsticas s„o: Soco, Chute, Poder e Defesa");
+    System.out.println("3 - VocÍ pode selecionar a quantidade de cartas (10,20,32) sendo que vocÍ receber· metade das cartas enquanto o computador receber· a outra metade.");
+    System.out.println("4 - Na primeira rodada o primeiro jogador È sorteado, apartir da primeira o ganhador da ˙ltima partida inicia a rodada.");
+    System.out.println("5 - Caso os valores das caracterÌsticas das cartas sejam iguais, ambos jogadores permanecem com as suas cartas.");
+    System.out.println("6 - O jogador que obter todas as cartas do advers·rio vence o jogo.");
   }
   
-  //Printa a mensagem de sair para o usu√°rio.
+  //Printa a mensagem de sair para o usu·rio.
   public static void printaSair(){  
-    System.out.println("Obrigado por jogar nosso game! At√© a pr√≥xima...");
+    System.out.println("Obrigado por jogar nosso game! AtÈ a prÛxima...");
   }
   
-  //Printa a mensagem de sauda√ß√£o para o usu√°rio
+  //Printa a mensagem de saudaÁ„o para o usu·rio
   public static void printaSaudacao(){
     
     System.out.println("******Bem-vindo ao game Super Trunfo (Dragon Ball)******");
     System.out.println();
-    System.out.println("Este game foi desenvolvido por \n\n => V√≠tor Soares Vian <https://github.com/vitorvsv> \n => Carlos Eduardo da Silva Smolareck <https://github.com/smolareck>");
+    System.out.println("Este game foi desenvolvido por \n\n => VÌtor Soares Vian <https://github.com/vitorvsv> \n => Carlos Eduardo da Silva Smolareck <https://github.com/smolareck>");
     System.out.println();
     
   }
@@ -37,11 +37,11 @@ public class Mensagem{
     
     System.out.println("Game Super Trunfo Dragon Ball");
     System.out.println();
-    System.out.println("Este game tem fim avaliativo para a disciplina de Algoritmos e Programa√ß√£o de 2015B - Univates.");
+    System.out.println("Este game tem fim avaliativo para a disciplina de Algoritmos e ProgramaÁ„o de 2015B - Univates.");
     System.out.println();
     System.out.println("Game desenvolvidor por: ");
     System.out.println();
-    System.out.println("V√≠tor Soares Vian");
+    System.out.println("VÌtor Soares Vian");
     System.out.println("Git Hub: https://github.com/vitorvsv");
     System.out.println("E-mail: vitorsoa@hotmail.com");
     System.out.println();
@@ -51,7 +51,7 @@ public class Mensagem{
     
   }
   
-  //Printa a mensagem para o usu√°rio selecionar a caracteristica para comparar a carta
+  //Printa a mensagem para o usu·rio selecionar a caracteristica para comparar a carta
   public static void printaSelecionaCaracteristica(){
     System.out.println("Informe uma caracteristica para comparar");
     System.out.println("1 - Soco");

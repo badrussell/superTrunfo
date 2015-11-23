@@ -6,7 +6,7 @@
  **/
 public class Carta{
   
-  //variáveis da classe
+  //variaveis da classe
   static int qntdCartas = 0;
   static int[] cartasComputador;
   static int[] cartasJogador;
@@ -19,14 +19,14 @@ public class Carta{
     Carta.cartasComputador = new int[ qntdCartas ];
     Carta.cartasJogador    = new int[ qntdCartas ];
     
-    //Após chamar este metodo já chama este outro que seta as cartas
+    //Apï¿½s chamar este metodo jï¿½ chama este outro que seta as cartas
     Carta.setCartas();
   }
   
   //Seta as cartas dos jogadores (computador e jogador)
   public static void setCartas(){
     
-    //Inicializa a variável
+    //Inicializa a variï¿½vel
     int cartaSorteada = 0;
     
     //Preenche o vetor com as cartas do computador
@@ -39,7 +39,7 @@ public class Carta{
           Carta.cartasComputador[i] = cartaSorteada;
     }
      
-    //Zerando a variável
+    //Zerando a variï¿½vel
     cartaSorteada = 0;
     
     //Preenche o vetor com as cartas do Jogador
@@ -57,7 +57,7 @@ public class Carta{
   //Testa se a carta exise no vetor
   // int carta   -> Id da carta sorteada
   // int[] vetor -> Vetor a ser analisado
-  //Retorna true se a carta existe no vetor e false caso não exista
+  //Retorna true se a carta existe no vetor e false caso nï¿½o exista
   public static boolean existeCartaNoVetor(int carta, int[] vetor){
     //Variavel de controle de teste
     boolean existe = false;
@@ -85,7 +85,7 @@ public class Carta{
     return Carta.cartasJogador;
   }
 
-  //Sorteia a carta pela qual os jogador irão jogar
+  //Sorteia a carta pela qual os jogador irï¿½o jogar
   public static int sorteiaCarta(){
     return (int) ((Math.random() * 32) + 1) ;
   }

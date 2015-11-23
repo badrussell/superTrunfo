@@ -1,7 +1,7 @@
 /*
  * Class Leitura 
  * 
- * Classe de manutenção do vetor de cartas
+ * Classe de manutencao do vetor de cartas
  * 
  */
 public class Leitura{
@@ -275,6 +275,7 @@ public class Leitura{
     return cartaUnica;
   }
   
+  //Retorna o valores de uma determinada carta passadas por parÃ¢metro
   public static String getCartaByString(int cartaId){
 
     String[][] dadosCarta = Leitura.getCartaById(cartaId);;
@@ -286,6 +287,7 @@ public class Leitura{
     ret += "\n Chute : "+dadosCarta[0][2];
     ret += "\n Poder : "+dadosCarta[0][3];
     ret += "\n Defesa : "+dadosCarta[0][4];
+    ret += "\n";
     
     return ret;
   }
